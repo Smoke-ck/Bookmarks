@@ -73,4 +73,4 @@ gem "omniauth-rails_csrf_protection"
 gem 'kaminari', '~> 1.2'
 gem 'webpacker', '~> 5.0'
 gem "down", "~> 5.2"
-
+gem "font-awesome-rails"
