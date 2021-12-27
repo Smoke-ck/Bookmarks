@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container"> 
+    <div class="header">
+    <div class="header__logInOut">
+      <% unless current_user %> 
+        <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path%>
+        <% else %>
+        <%= current_user[:name]%>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% end %>
+    </div>  
+      <nav class="nav">
+        <ul class="nav_list">
+          <li>
+            <span class="nav_list__item"> 
+              <%= link_to "Home",home_path %>
+            </span></li>
+            <span class="nav_list__item"> 
+              <%= link_to 'Add new bookmark', new_link_path %>
+            </span></li>
+        </ul>
+      </nav>
+    </div>
+ 
+    <%= yield %>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+<div class="preview" data-microlink-target="output" style="<%= @link.persisted? ? nil : 'display: none;'%>">
+    <img class="show__img" src="<%= @link.thumbnail.attached? ? url_for(@link.thumbnail) : nil %>"/>
+    <div>
+        <h5 class="preview__title"><%= @link.persisted? ? @link.title : nil %></h5>
+        <p class="preview__description><%= @link.persisted? ? @link.description : nil %></p>
+    </div>
+</div> 

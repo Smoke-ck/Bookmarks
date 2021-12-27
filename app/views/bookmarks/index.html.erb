@@ -1,0 +1,21 @@
+<div class="bookmarks"> 
+
+<form method="GET" action="/search">
+    <input name="query" type="search" placeholder="enter the url">
+    <button type="submit">search</button>
+</form>
+
+<h1 class="bookmarks__title">All bookmarks</h1>
+
+<%= paginate @bookmarks %>
+    <div class="bookmarks__wrapper">
+    <% @bookmarks.each do |bookmark| %>
+        
+        <div class="card"> 
+            <h3 class="card__title">title: <%=bookmark.title%> </h3>
+            <h3 class="card__title">url: <%=bookmark.url%> </h3>
+            <%= link_to "Delete", bookmark_path(bookmark),method: :delete %>
+        </div>
+    <% end %>
+    </div>
+</div>

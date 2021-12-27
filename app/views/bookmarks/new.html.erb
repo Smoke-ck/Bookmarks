@@ -1,0 +1,14 @@
+  <h2>Add Bookmark</h2>
+    <%= form_for :bookmark, url: bookmarks_path do |f| %>
+    <p>
+        Name<br>
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        URl<br>
+        <%= f.text_field :url %>
+    </p>
+    <p>
+    <%= f.submit %>
+    </p>
+<% end %>

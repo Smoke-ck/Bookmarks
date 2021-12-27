@@ -1,0 +1,27 @@
+<div class="bookmarks"> 
+<p id="notice"><%= notice %></p>
+<h1 class="bookmarks__title">Bookmarks</h1>
+<form method="GET" action="/search" class="search">
+    <input name="query" type="search" placeholder="Enter the url" class="search__input">
+    <button type="submit" class="search__button"><i class="fa fa-search"></i></button>
+</form><br>
+<div class="bookmarks__wrapper">
+    <% @links.each do |link| %>
+        <div class="card"> 
+        <%= link_to link.url, target: "_blank" do %>
+        <h3><%= link.url %></h3>
+        <% end %>
+         <div class="card__img">
+           <img class="card__img--dataImg" src="<%= link.image%> "/>
+         </div>
+         <div class="card__controls">
+           <%= link_to 'Show', link %>
+           <%= link_to link, method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+         </div>
+      </div>
+    <% end %>
+    </div><br><br>
+<%= paginate @links %><br>
+</div>

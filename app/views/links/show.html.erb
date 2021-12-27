@@ -1,0 +1,24 @@
+<div class="show">
+  <p id="notice"><%= notice %></p>
+  <h2 class="show__title">
+    <strong>Url:</strong>
+    <%= @link.url %>
+  </h2>
+  <div class="show__control">
+    <%= link_to links_path do %>
+      <i class="fa fa-arrow-left"></i>
+    <% end %>
+  </div><br>
+  
+
+  <%= link_to @link.url, target: "_blank" do %>
+    <img class="show__img" src="<%= @link.image%> "/>
+  <% end %>
+  <div class="show__description">
+      <h5><%= @link.persisted? ? @link.title : nil %></h5>
+      <p><%= @link.persisted? ? @link.description : nil %></p>
+  </div>
+  
+</div>
+
+
