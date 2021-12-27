@@ -9,6 +9,7 @@
     background-color: #E5E5E5;
     padding: 30px;
     border-radius: 20px;
+    position: relative;
 }  
 .header {
     display: flex;
@@ -63,6 +64,11 @@
         display: flex;
         justify-content: space-around;
     }
+}
+.nav {
+    position: absolute;
+    top:20px;
+    right: 10px;
 }
 .nav_list{
     display: flex;

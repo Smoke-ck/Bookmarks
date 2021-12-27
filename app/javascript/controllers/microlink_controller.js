@@ -16,8 +16,8 @@ export default class extends Controller {
         this.clearPreview();
         if (this.inputTarget.value != "") {
             try {
+                this.messageTarget.innerText = "Please waiting link preview...";
                 const { status, data } = await mql(this.inputTarget.value)
-                this.messageTarget.innerText = "Fetching link preview...";
                 if(status === "success") {
                     this.setFormData(data);
                     this.renderPreview(data);

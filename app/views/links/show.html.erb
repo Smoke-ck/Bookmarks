@@ -1,4 +1,5 @@
 <div class="show">
+<%= render "nav" %>
   <p id="notice"><%= notice %></p>
   <h2 class="show__title">
     <strong>Url:</strong>
@@ -9,8 +10,6 @@
       <i class="fa fa-arrow-left"></i>
     <% end %>
   </div><br>
-  
-
   <%= link_to @link.url, target: "_blank" do %>
     <img class="show__img" src="<%= @link.image%> "/>
   <% end %>
