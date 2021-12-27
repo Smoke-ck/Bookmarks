@@ -26,7 +26,7 @@ export default class extends Controller {
                     this.messageTarget.innerText = "There was an error fetching the link preview.";
                 }
             } catch(e) {
-                this.messageTarget.innerText = "Please enter a valid url, it must start with, http://";
+                this.messageTarget.innerText = "Please enter a valid url, it must start with, https://";
             }
         }
     }
